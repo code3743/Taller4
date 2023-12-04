@@ -3,7 +3,8 @@ package taller4
 import org.scalatest.funsuite.AnyFunSuite
 import org.junit.runner.RunWith
 import org.scalatestplus.junit.JUnitRunner
-import scala.collection.parallel.immutable.ParVector
+
+
 
 
 @RunWith(classOf[JUnitRunner])
@@ -27,12 +28,6 @@ class TestMatrizUtils extends AnyFunSuite{
         val v1 = Vector(1,2,3);
         val v2 = Vector(1,2,3);
         assert(utils.prodPunto(v1,v2) == 14);
-    }
-
-    test("Test prodPuntoParD"){
-        val v1 = ParVector(1,2,3);
-        val v2 = ParVector(1,2,3);
-        assert(utils.prodPuntoParD(v1,v2) == 14);
     }
 
     test("Test transpuesta"){

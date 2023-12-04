@@ -1,7 +1,11 @@
 package taller4
 import common._
 import scala.util.Random;
+import scala.collection.parallel.immutable.ParVector;
 import Types.Matriz;
+import Types.MatrizPar;
+
+
 
 class MultiplicacionMatriz {
   
@@ -28,6 +32,8 @@ class MultiplicacionMatriz {
       v(i)(j).join();
     }
   }
+
+   
 
   def multMatrizRecursiva(m1: Matriz, m2: Matriz): Matriz = {
     val n = m1.length;
@@ -171,6 +177,31 @@ class MultiplicacionMatriz {
         )
         utils.combinarMatrices(c11.join(), c12.join(), c21.join(), c22.join());
     }
+    }
+
+
+
+    //Prueba de algortimo con ParVector y MatrizPar
+
+    def multMatrizParD(m1: MatrizPar, m2: MatrizPar): MatrizPar = {
+      val l = m1.length;
+      val m2t = utils.transpuestaParD(m2);
+      ParVector.tabulate(l, l)((i, j) => utils.prodPuntoParD(m1(i), m2t(j)));
+    }
+
+    def multMatrizParParD(m1: MatrizPar, m2: MatrizPar): MatrizPar = {
+      val l = m1.length;
+      val m2t = utils.transpuestaParD(m2);
+
+      val v = ParVector.tabulate(l, l) { (i, j) =>
+        task {
+          utils.prodPuntoParD(m1(i), m2t(j));
+        }
+      }
+
+      ParVector.tabulate(l, l) { (i, j) =>
+        v(i)(j).join();
+      }
     }
 
 }

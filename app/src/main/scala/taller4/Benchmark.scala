@@ -1,5 +1,6 @@
 package taller4;
 import Types.Matriz;
+import Types.MatrizPar;
 
 import org.scalameter.measure
 import org.scalameter.withWarmer
@@ -22,4 +23,14 @@ class Benchmark {
 
     }
 
+    def compararAlgoritmosParD(Funcion1:(MatrizPar,MatrizPar) => MatrizPar, Funcion2:(MatrizPar,MatrizPar) => MatrizPar)(m1: MatrizPar, m2: MatrizPar): (Double, Double, Double) = {
+        val timeF1 = withWarmer(new Warmer.Default) measure {
+            Funcion1(m1, m2);
+        }
+        val timeF2 = withWarmer(new Warmer.Default) measure {
+            Funcion2(m1, m2);
+        }
+        val promedio = timeF1.value / timeF2.value;
+        (timeF1.value, timeF2.value, promedio);
+    }
 }

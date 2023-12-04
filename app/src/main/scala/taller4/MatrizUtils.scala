@@ -1,6 +1,8 @@
 package taller4
 import  scala.util.Random;
-import Types.Matriz;
+import  Types.Matriz;
+import  Types.MatrizPar;
+import  scala.collection.parallel.immutable.ParVector;
 
 class MatrizUtils {
   val random = new Random;
@@ -57,4 +59,20 @@ class MatrizUtils {
     }
   }
 
+
+  // Pruebas con VectorPar y MatrizPar
+   def matrizAlAzarParD(long: Int, vals: Int): MatrizPar = {
+    val v = ParVector.fill(long, long) { random.nextInt(vals) };
+    v;
+  }
+
+  def prodPuntoParD(v1:ParVector[Int], v2:ParVector[Int]): Int = {
+    (v1 zip v2).map({ case (i, j) => i * j }).sum
+  }
+
+  def transpuestaParD(m: MatrizPar): MatrizPar = {
+    val l = m.length;
+    val v = ParVector.tabulate(l, l)((i, j) => m(j)(i));
+    v;
+  }
 }
