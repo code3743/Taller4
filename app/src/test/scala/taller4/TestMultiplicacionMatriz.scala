@@ -118,7 +118,7 @@ class TestMultiplicacionMatriz extends AnyFunSuite{
         Vector(10774,	20232,	16111,	17253,	12809,	13320,	19173,	18970),
         Vector(10781,	11471,	10113,	14128,	13689,	14088,	15299,	15738),
         Vector(6714,	10800,	14343,	7992,	6227,	6505,	9899,	11013));
-    assert(m3 == obj.multMatrizPar(m1, m2));
+        assert(m3 == obj.multMatrizPar(m1, m2));
     }
 
   

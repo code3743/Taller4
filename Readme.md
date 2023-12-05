@@ -36,6 +36,7 @@ para correr los tests ejecutar el siguiente comando:
 
 ### Resultados comparativos de la implementación secuencial y concurrente
 
+Acontinuación se presentan los resultados de la ejecución de las diferentes implementaciones de la multiplicación de matrices de forma secuencial y concurrente.
 
 #### 1. multMatriz vs multMatrizPar
 
@@ -135,50 +136,45 @@ para correr los tests ejecutar el siguiente comando:
 ### 3. multStrassen vs multStrassenPar
 
     Multiplicando matrices de 2x2
-    Tiempo secuencial: 0.47136
-    Tiempo paralelo: 0.330262
-    Aceleración: 1.4272305018439906
+    Tiempo secuencial: 0.212623
+    Tiempo paralelo: 0.266244
+    Aceleración: 0.7986020342242455
     Multiplicando matrices de 4x4
-    Tiempo secuencial: 1.456916
-    Tiempo paralelo: 0.360492
-    Aceleración: 4.041465552633624
+    Tiempo secuencial: 0.344653
+    Tiempo paralelo: 0.663266
+    Aceleración: 0.5196301333100144
     Multiplicando matrices de 8x8
-    Tiempo secuencial: 1.430855
-    Tiempo paralelo: 0.767605
-    Aceleración: 1.864051172152344
+    Tiempo secuencial: 0.555522
+    Tiempo paralelo: 0.821276
+    Aceleración: 0.6764132885899502
     Multiplicando matrices de 16x16
-    Tiempo secuencial: 8.123346
-    Tiempo paralelo: 1.149941
-    Aceleración: 7.064141551610038
+    Tiempo secuencial: 3.737419
+    Tiempo paralelo: 3.846555
+    Aceleración: 0.9716275992413992
     Multiplicando matrices de 32x32
-    Tiempo secuencial: 51.863244
-    Tiempo paralelo: 12.081979
-    Aceleración: 4.292611665688212
+    Tiempo secuencial: 13.186677
+    Tiempo paralelo: 20.495109
+    Aceleración: 0.6434060438517307
     Multiplicando matrices de 64x64
-    Tiempo secuencial: 350.443074
-    Tiempo paralelo: 47.401063
-    Aceleración: 7.393147997545962
+    Tiempo secuencial: 102.131656
+    Tiempo paralelo: 55.481477
+    Aceleración: 1.84082438901185
     Multiplicando matrices de 128x128
-    Tiempo secuencial: 2456.249043
-    Tiempo paralelo: 557.041622
-    Aceleración: 4.409453344224249
+    Tiempo secuencial: 729.914031
+    Tiempo paralelo: 391.808502
+    Aceleración: 1.8629356618708597
     Multiplicando matrices de 256x256
-    Tiempo secuencial: 18623.948903
-    Tiempo paralelo: 2620.830781
-    Aceleración: 7.106124148883002
+    Tiempo secuencial: 4843.947296
+    Tiempo paralelo: 2613.450395
+    Aceleración: 1.8534682369588271
     Multiplicando matrices de 512x512
-
-    <==========---> 80% EXECUTING [24m 50s] faltaron 2 comprobaciones
-
-    Multiplicando matrices de 512x512
-    Tiempo secuencial: 
-    Tiempo paralelo:
-    Aceleración: 
+    Tiempo secuencial: 32472.626935
+    Tiempo paralelo: 18973.739096
+    Aceleración: 1.711451115180866
     Multiplicando matrices de 1024x1024
-    Tiempo secuencial: 
-    Tiempo paralelo: 
-    Aceleración: 
-
+    Tiempo secuencial: 237095.441557
+    Tiempo paralelo: 136106.809686
+    Aceleración: 1.74198074368198
 
 ---
 
@@ -227,6 +223,38 @@ para correr los tests ejecutar el siguiente comando:
     Aceleración:  
 
 --
+
+### 5. Comparar prodPunto y prodPuntoPar con diferentes longitudes de vectores
+    Comparando prodPunto de vectores de tamaño 10
+    Tiempo secuencial: 0.059793
+    Tiempo paralelo: 1.084469
+    Aceleración: 0.05513573924197004
+    Comparando prodPunto de vectores de tamaño 100
+    Tiempo secuencial: 0.083038
+    Tiempo paralelo: 0.573799
+    Aceleración: 0.1447161811017447
+    Comparando prodPunto de vectores de tamaño 1000
+    Tiempo secuencial: 0.609687
+    Tiempo paralelo: 0.692174
+    Aceleración: 0.8808290978857918
+    Comparando prodPunto de vectores de tamaño 10000
+    Tiempo secuencial: 0.929695
+    Tiempo paralelo: 2.090869
+    Aceleración: 0.4446452647200757
+    Comparando prodPunto de vectores de tamaño 100000
+    Tiempo secuencial: 5.890912
+    Tiempo paralelo: 5.725828
+    Aceleración: 1.0288314633272253
+    Comparando prodPunto de vectores de tamaño 1000000
+    Tiempo secuencial: 34.775707
+    Tiempo paralelo: 31.030398
+    Aceleración: 1.1206980651682261
+    Comparando prodPunto de vectores de tamaño 10000000
+    Tiempo secuencial: 268.999511
+    Tiempo paralelo: 848.385006
+    Aceleración: 0.3170724483548923
+    Comparando prodPunto de vectores de tamaño 100000000
+    Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 
 ## Conclusiones
 
