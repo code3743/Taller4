@@ -36,6 +36,7 @@ para correr los tests ejecutar el siguiente comando:
 
 ### Resultados comparativos de la implementación secuencial y concurrente
 
+
 #### 1. multMatriz vs multMatrizPar
 
     Multiplicando matrices de 2x2
@@ -116,7 +117,7 @@ para correr los tests ejecutar el siguiente comando:
     Tiempo paralelo: 53722.957913
     Aceleración: 1.7991140994977033
 
-    <==========---> 80% EXECUTING [1h 14m 56s] faltaron 2 comprobaciones
+    <==========---> 80% EXECUTING [48m 56s] faltaron 2 comprobaciones
 
     Multiplicando matrices de 512x512
     Tiempo secuencial: 
@@ -214,7 +215,6 @@ para correr los tests ejecutar el siguiente comando:
     Tiempo secuencial: 6643.26411
     Tiempo paralelo: 16012.428625
     Aceleración: 0.4148817312839076
-    Multiplicando matrices de 512x512
     <==========---> 80% EXECUTING [6m 22s] faltaron 2 comprobaciones
     
     Multiplicando matrices de 512x512
@@ -227,3 +227,10 @@ para correr los tests ejecutar el siguiente comando:
     Aceleración:  
 
 --
+
+## Conclusiones
+
+- La implementación de la multiplicación de matrices de forma concurrente no siempre es más rápida que la implementación secuencial, esto se debe a que el costo de crear los hilos y sincronizarlos es mayor que el costo de realizar la operación de forma secuencial.
+- La implementación de la multiplicación de matrices de forma concurrente utilizando ParVector es más rápida que la implementación secuencial, esto se debe a que ParVector utiliza un pool de hilos que se reutilizan para realizar las operaciones, por lo que el costo de crear los hilos y sincronizarlos es menor que el costo de realizar la operación de forma secuencial.
+- Algunas implementaciones de la multiplicación de matrices de forma concurrente son más rápidas que otras, esto se debe a que algunas implementaciones utilizan más hilos que otras, por lo que el costo de crear los hilos y sincronizarlos es mayor que el costo de realizar la operación de forma secuencial.
+

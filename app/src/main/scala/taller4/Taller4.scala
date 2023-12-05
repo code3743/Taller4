@@ -21,36 +21,36 @@ object Taller4{
       }
     );
 
-    // for {
-    //   i <- 1 to 10
-    //   m1 = utils.matrizAlAzar(math.pow(2, i).toInt, 2)
-    //   m2 = utils.matrizAlAzar(math.pow(2, i).toInt, 2)
-    // } yield {
-    //     println(s"Multiplicando matrices de ${math.pow(2, i).toInt}x${math.pow(2, i).toInt}");
-    //     val (t1, t2, aceleracion) = benchmark.compararAlgoritmos(
-    //       new MultiplicacionMatriz().multStrassen,
-    //       new MultiplicacionMatriz().multStrassenPar
-    //     )(m1, m2);
-    //     println(s"Tiempo secuencial: $t1");
-    //     println(s"Tiempo paralelo: $t2");
-    //     println(s"Aceleración: $aceleracion");
-    //   }
-    //}
-
-    //Prueba con ParVector
-     for {
-        i <- 1 to 10
-        m1 = utils.matrizAlAzarParD(math.pow(2, i).toInt, 2)
-        m2 = utils.matrizAlAzarParD(math.pow(2, i).toInt, 2)
-     } yield {
+    for {
+      i <- 1 to 10
+      m1 = utils.matrizAlAzar(math.pow(2, i).toInt, 2)
+      m2 = utils.matrizAlAzar(math.pow(2, i).toInt, 2)
+    } yield {
         println(s"Multiplicando matrices de ${math.pow(2, i).toInt}x${math.pow(2, i).toInt}");
-        val (t1, t2, aceleracion) = benchmark.compararAlgoritmosParD(
-          new MultiplicacionMatriz().multMatrizParD,
-          new MultiplicacionMatriz().multMatrizParParD
+        val (t1, t2, aceleracion) = benchmark.compararAlgoritmos(
+          new MultiplicacionMatriz().multMatriz,
+          new MultiplicacionMatriz().multMatrizPar
         )(m1, m2);
         println(s"Tiempo secuencial: $t1");
         println(s"Tiempo paralelo: $t2");
         println(s"Aceleración: $aceleracion");
-    }
- }
+      }
+    
+    // //Prueba con ParVector
+    //  for {
+    //     i <- 1 to 10
+    //     m1 = utils.matrizAlAzarParD(math.pow(2, i).toInt, 2)
+    //     m2 = utils.matrizAlAzarParD(math.pow(2, i).toInt, 2)
+    //  } yield {
+    //     println(s"Multiplicando matrices de ${math.pow(2, i).toInt}x${math.pow(2, i).toInt}");
+    //     val (t1, t2, aceleracion) = benchmark.compararAlgoritmosParD(
+    //       new MultiplicacionMatriz().multMatrizParD,
+    //       new MultiplicacionMatriz().multMatrizParParD
+    //     )(m1, m2);
+    //     println(s"Tiempo secuencial: $t1");
+    //     println(s"Tiempo paralelo: $t2");
+    //     println(s"Aceleración: $aceleracion");
+    // }
+}
+
 }
