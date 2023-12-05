@@ -43,6 +43,12 @@ class TestMatrizUtils extends AnyFunSuite{
         assert(t == Vector(Vector(1,4,7),Vector(2,5,8),Vector(3,6,9)));
     }
 
+    test("Test transpuestaPar"){
+        val m = ParVector(ParVector(1,2,3),ParVector(4,5,6),ParVector(7,8,9));
+        val t = utils.transpuestaParD(m);
+        assert(t == ParVector(ParVector(1,4,7),ParVector(2,5,8),ParVector(3,6,9)));
+    }
+
     test("Test subMatriz"){
         val m = Vector(Vector(1,2,3,4),Vector(5,6,7,8),Vector(9,10,11,12),Vector(13,14,15,16));
         val s = utils.subMatriz(m,1,1,2);
