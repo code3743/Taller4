@@ -66,8 +66,8 @@ Para el caso **2** puede ajustar el tamaño de los vectores que se calcular el p
 
 ```scala
     i <- 1 to 10
-    v1 = utils.vectorAlAzar(math.pow(10, i).toInt)
-    v2 = utils.vectorAlAzar(math.pow(10, i).toInt)
+    ...
+    benchmark.compararProdPunto(math.pow(10, i).toInt)
 ```  
 
 Después de ajustar los parámetros deseado ejecutar el siguiente comando para correr el proyecto:
