@@ -55,13 +55,6 @@ class MultiplicacionMatriz {
         utils.subMatriz(m2, n / 2, n / 2, n / 2)
       );
 
-      val (p1, p2, p3, p4)= (
-       multMatrizRecursiva(a11, b11),
-       multMatrizRecursiva(a12, b12),
-       multMatrizRecursiva(a21, b21),
-       multMatrizRecursiva(a22, b22)
-      );
-
       val( c11, c12, c21,c22) = (
         utils.sumMatriz(multMatrizRecursiva(a11, b11), multMatrizRecursiva(a12, b21)),
         utils.sumMatriz(multMatrizRecursiva(a11, b12), multMatrizRecursiva(a12, b22)),
@@ -89,14 +82,6 @@ class MultiplicacionMatriz {
         utils.subMatriz(m2, 0, n / 2, n / 2),
         utils.subMatriz(m2, n / 2, 0, n / 2),
         utils.subMatriz(m2, n / 2, n / 2, n / 2)
-      );
-
-     
-      val (p1, p2, p3, p4)= parallel(
-       multMatrizRecursivaPar(a11, b11),
-       multMatrizRecursivaPar(a12, b12),
-       multMatrizRecursivaPar(a21, b21),
-       multMatrizRecursivaPar(a22, b22)
       );
 
       val( c11, c12, c21,c22) = parallel(
